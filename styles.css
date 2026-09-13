@@ -128,16 +128,12 @@ a.header-cta{margin-left:10px;white-space:nowrap;min-height:38px;padding:0 18px;
 .section-hero-image img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;cursor:zoom-in;object-position:center 20%}
 .section-hero-panel:hover .section-hero-image img{transform:scale(1.035)}
 .section-hero-copy{display:flex;flex-direction:column;justify-content:center;padding:36px 42px}
-.section-hero-copy h2{font-family:Georgia,serif;font-size:clamp(30px,3.6vw,44px);font-weight:400;line-height:1.06;margin:0 0 13px}
+.section-hero-copy h1,.section-hero-copy h2{font-family:Georgia,serif;font-size:clamp(30px,3.6vw,44px);font-weight:400;line-height:1.06;margin:0 0 13px;color:#fff}
+.section-hero-copy .about-tagline{font-family:Georgia,serif;font-style:italic;color:var(--gold2);font-size:clamp(15px,1.6vw,18px);margin:0 0 14px}
 .section-hero-copy p:not(.kicker){color:var(--muted);max-width:680px;margin:0}
 .section-hero-copy .actions{margin-top:22px}
 
 /* Masthead da seção Sobre (título geral do site) */
-.about-hero{position:relative;text-align:center;padding:52px 0 40px;border-bottom:1px solid var(--line);margin-bottom:44px}
-.about-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,154,46,.1),transparent 55%);pointer-events:none}
-.about-hero h1{position:relative;font-family:Georgia,serif;font-weight:400;font-size:clamp(32px,4.4vw,50px);letter-spacing:.02em;margin:0 0 12px;color:#fff}
-.about-hero .about-tagline{position:relative;font-family:Georgia,serif;font-style:italic;color:var(--gold2);font-size:clamp(15px,1.8vw,19px);margin:0 0 18px}
-.about-hero .lead{position:relative;max-width:680px;margin:0 auto;color:#c3beb4;font-size:16px}
 
 /* Adestramento */
 .training-section{padding:0 0 10px}
@@ -233,7 +229,6 @@ a.header-cta{margin-left:10px;white-space:nowrap;min-height:38px;padding:0 18px;
   .hero-layout{grid-template-columns:1fr;min-height:auto}.hero-photo{grid-row:1;min-height:340px;margin-inline:-14px}.hero-photo:before{background:linear-gradient(0deg,var(--bg),transparent 45%)}.hero-copy{padding:24px 0 36px;grid-row:2}.hero-copy h1{font-size:clamp(40px,11vw,58px)}.hero-copy .lead{font-size:15px}.actions .btn{flex:1 1 180px}.pillars{grid-template-columns:repeat(2,1fr);margin-top:0}.pillars article:nth-child(2){border-right:0}.pillars article:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .contact-section{padding-top:52px}
   .section-hero-wrap{padding:32px 0 36px}
-  .about-hero{padding:36px 0 30px;margin-bottom:32px}
   .facts-grid{grid-template-columns:1fr 1fr;max-width:none}
   .structure-photos{grid-template-columns:1fr}
   .feature-grid{grid-template-columns:1fr}
