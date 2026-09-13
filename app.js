@@ -1,6 +1,6 @@
 "use strict";
 
-const WHATSAPP_NUMBER = "554199625634";
+const WHATSAPP_NUMBER = "5541999625634";
 const menuBtn = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const header = document.querySelector('.site-header');
@@ -22,7 +22,20 @@ if(menuBtn && nav){
   window.addEventListener('resize',()=>{ if(innerWidth>820) closeMenu(); });
 }
 
-window.addEventListener('scroll',()=>header?.classList.toggle('scrolled', scrollY > 18),{passive:true});
+const scrollProgress = document.querySelector('#scrollProgress');
+const backToTop = document.querySelector('#backToTop');
+function onScroll(){
+  header?.classList.toggle('scrolled', scrollY > 18);
+  backToTop?.classList.toggle('visible', scrollY > 600);
+  if(scrollProgress){
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+  }
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+backToTop?.addEventListener('click', () => window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
 
 document.querySelectorAll('.wa-link').forEach(link=>{
   const message = link.dataset.message || 'Olá! Vim pelo site do Canil Von Haus Sotter e gostaria de mais informações.';
