@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://edubelino18.github.io/canil-von-haus-sotter/sitemap.xml
