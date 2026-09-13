@@ -80,13 +80,15 @@ if('IntersectionObserver' in window){
   revealItems.forEach(el=>el.classList.add('visible'));
 }
 
-const sectionLinks = [...document.querySelectorAll('.main-nav a[href^="#"]')];
+const sectionLinks = [...document.querySelectorAll('.main-nav a[href^="#"], .quick-nav a[href^="#"]')];
 const sections = sectionLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 if('IntersectionObserver' in window && sections.length){
   const navObserver = new IntersectionObserver((entries)=>{
     const active = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
     if(!active) return;
     sectionLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === `#${active.target.id}`));
+    const activePill = document.querySelector(`.quick-nav a[href="#${active.target.id}"]`);
+    activePill?.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
   },{rootMargin:'-25% 0px -65% 0px',threshold:[0,.2,.5]});
   sections.forEach(s=>navObserver.observe(s));
 }
@@ -94,7 +96,7 @@ if('IntersectionObserver' in window && sections.length){
 // Galeria/lightbox: abre as fotos das seções em tamanho maior ao clicar, com navegação entre elas.
 (() => {
   const galleryImages = [...document.querySelectorAll(
-    '.hero-photo img, .about-photo img, .photo-card img, .puppy-image img'
+    '.hero-photo img, .structure-photo img, .breed-photo img, .training-photo img, .puppy-image img'
   )];
   if (!galleryImages.length) return;
 
@@ -143,13 +145,13 @@ if('IntersectionObserver' in window && sections.length){
     lastFocus = document.activeElement;
     render(index);
     lightbox.classList.add('open');
-    document.body.classList.add('menu-open');
+    lockBodyScroll();
     closeBtn.focus({preventScroll:true});
   };
 
   const close = () => {
     lightbox.classList.remove('open');
-    document.body.classList.remove('menu-open');
+    unlockBodyScroll();
     modalImg.removeAttribute('src');
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus({preventScroll:true});
   };
