@@ -65,6 +65,22 @@ document.querySelectorAll('.wa-link').forEach(link=>{
 const yearEl = document.querySelector('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Rotação automática das fotos de capa (hero) de cada seção, quando houver mais de uma.
+const HERO_SLIDE_INTERVAL = 6000;
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.hero-slideshow').forEach(wrap => {
+    const slides = [...wrap.querySelectorAll('img')];
+    if (slides.length < 2) return;
+    let current = slides.findIndex(img => img.classList.contains('active'));
+    if (current < 0) current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, HERO_SLIDE_INTERVAL);
+  });
+}
+
 const revealItems = document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){
   const observer = new IntersectionObserver((entries)=>{
@@ -96,7 +112,7 @@ if('IntersectionObserver' in window && sections.length){
 // Galeria/lightbox: abre as fotos das seções em tamanho maior ao clicar, com navegação entre elas.
 (() => {
   const galleryImages = [...document.querySelectorAll(
-    '.hero-photo img, .structure-photo img, .breed-photo img, .training-photo img, .puppy-image img'
+    '.section-hero-image img, .structure-photo img'
   )];
   if (!galleryImages.length) return;
 
