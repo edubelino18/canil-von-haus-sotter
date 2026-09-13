@@ -122,6 +122,7 @@ a.header-cta{margin-left:10px;white-space:nowrap;min-height:38px;padding:0 18px;
 
 /* Hero de seção reutilizável (Criação, Adestramento, Hospedagem) */
 .section-hero-wrap{padding:44px 0 52px}
+#sobre .section-hero-wrap{padding-top:0}
 .section-hero-panel{display:grid;grid-template-columns:42% 58%;min-height:620px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(100deg,#101210,#111813);box-shadow:var(--shadow)}
 .section-hero-image{position:relative;overflow:hidden}
 .section-hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,#111813 100%);z-index:1}
