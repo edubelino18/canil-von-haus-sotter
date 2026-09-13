@@ -66,7 +66,7 @@ const yearEl = document.querySelector('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Rotação automática das fotos de capa (hero) de cada seção, quando houver mais de uma.
-const HERO_SLIDE_INTERVAL = 6000;
+const HERO_SLIDE_INTERVAL = 2000;
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.hero-slideshow').forEach(wrap => {
     const slides = [...wrap.querySelectorAll('img')];
