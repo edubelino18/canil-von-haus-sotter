@@ -172,7 +172,7 @@ a.header-cta{margin-left:10px;white-space:nowrap;min-height:38px;padding:0 18px;
 .photo-card:nth-child(4) img{object-position:28% 55%}
 
 /* Contato */
-.contact-section{padding:76px 0 54px}
+.contact-section{padding:0 0 54px}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .contact-card{border:1px solid var(--line);border-radius:12px;padding:24px;background:linear-gradient(150deg,rgba(19,24,17,.96),rgba(11,13,11,.94));display:flex;gap:16px;align-items:flex-start}
 .contact-card .c-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,154,46,.1);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);font-size:19px;flex:0 0 auto}
@@ -228,7 +228,6 @@ a.header-cta{margin-left:10px;white-space:nowrap;min-height:38px;padding:0 18px;
   .quick-nav a{flex:0 0 auto;padding:7px 15px;border:1px solid var(--line);border-radius:20px;font-size:12.5px;color:#c9c4ba;white-space:nowrap;background:rgba(255,255,255,.02);transition:.2s ease}
   .quick-nav a.active{background:var(--gold);color:#171200;border-color:var(--gold);font-weight:700}
   .hero-layout{grid-template-columns:1fr;min-height:auto}.hero-photo{grid-row:1;min-height:340px;margin-inline:-14px}.hero-photo:before{background:linear-gradient(0deg,var(--bg),transparent 45%)}.hero-copy{padding:24px 0 36px;grid-row:2}.hero-copy h1{font-size:clamp(40px,11vw,58px)}.hero-copy .lead{font-size:15px}.actions .btn{flex:1 1 180px}.pillars{grid-template-columns:repeat(2,1fr);margin-top:0}.pillars article:nth-child(2){border-right:0}.pillars article:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .contact-section{padding-top:52px}
   .section-hero-wrap{padding:32px 0 36px}
   .facts-grid{grid-template-columns:1fr 1fr;max-width:none}
   .structure-photos{grid-template-columns:1fr}
