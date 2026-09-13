@@ -151,7 +151,8 @@ a.header-cta{margin-left:10px;white-space:nowrap;min-height:38px;padding:0 18px;
 /* Hospedagem e creche */
 .stay-section{padding:0 0 10px}
 .compare-table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.compare-table thead th{background:rgba(201,154,46,.08);color:var(--gold2);text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:16px 18px;border-bottom:1px solid var(--line)}
+.compare-table thead th{background:rgba(201,154,46,.08);color:var(--gold2);text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:16px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.compare-table thead th:last-child{border-right:0}
 .compare-table tbody td{padding:18px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top;font-size:14px;color:#d8d3c8}
 .compare-table tbody tr:last-child td{border-bottom:0}
 .compare-table tbody td:last-child{border-right:0}
@@ -171,7 +172,7 @@ a.header-cta{margin-left:10px;white-space:nowrap;min-height:38px;padding:0 18px;
 .photo-card:nth-child(4) img{object-position:28% 55%}
 
 /* Contato */
-.contact-section{padding:76px 0 10px}
+.contact-section{padding:76px 0 54px}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .contact-card{border:1px solid var(--line);border-radius:12px;padding:24px;background:linear-gradient(150deg,rgba(19,24,17,.96),rgba(11,13,11,.94));display:flex;gap:16px;align-items:flex-start}
 .contact-card .c-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,154,46,.1);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);font-size:19px;flex:0 0 auto}
