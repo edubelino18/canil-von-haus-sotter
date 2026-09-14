@@ -103,8 +103,14 @@ if('IntersectionObserver' in window && sections.length){
     const active = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
     if(!active) return;
     sectionLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === `#${active.target.id}`));
+    const quickNav = document.querySelector('.quick-nav');
     const activePill = document.querySelector(`.quick-nav a[href="#${active.target.id}"]`);
-    activePill?.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    if(quickNav && activePill){
+      const navRect = quickNav.getBoundingClientRect();
+      const pillRect = activePill.getBoundingClientRect();
+      const alreadyVisible = pillRect.left >= navRect.left && pillRect.right <= navRect.right;
+      if(!alreadyVisible) activePill.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    }
   },{rootMargin:'-25% 0px -65% 0px',threshold:[0,.2,.5]});
   sections.forEach(s=>navObserver.observe(s));
 }
