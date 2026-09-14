@@ -38,6 +38,8 @@ if(menuBtn && nav){
   });
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
   window.addEventListener('resize',()=>{ if(innerWidth>820) closeMenu(); });
+  document.querySelector('.nav-backdrop')?.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
 }
 
 const scrollProgress = document.querySelector('#scrollProgress');
@@ -96,51 +98,13 @@ if('IntersectionObserver' in window){
   revealItems.forEach(el=>el.classList.add('visible'));
 }
 
-// Scroll horizontal controlado manualmente na barra de pílulas (mobile): o iOS, em alguns
-// navegadores embutidos (WhatsApp, Instagram etc.), pode interpretar um arraste horizontal
-// que chega ao fim da lista como o gesto nativo de "voltar/avançar página" do próprio app,
-// revelando uma área em branco. Assumindo o controle do toque e chamando preventDefault()
-// assim que a intenção é horizontal, evitamos que esse gesto escape para fora da pílula.
-const quickNavEl = document.querySelector('.quick-nav');
-if (quickNavEl) {
-  let touchStartX = 0, touchStartY = 0, startScrollLeft = 0, dragAxis = null;
-  quickNavEl.addEventListener('touchstart', (e) => {
-    const t = e.touches[0];
-    touchStartX = t.clientX;
-    touchStartY = t.clientY;
-    startScrollLeft = quickNavEl.scrollLeft;
-    dragAxis = null;
-  }, {passive:true});
-  quickNavEl.addEventListener('touchmove', (e) => {
-    const t = e.touches[0];
-    const dx = t.clientX - touchStartX;
-    const dy = t.clientY - touchStartY;
-    if (dragAxis === null && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) {
-      dragAxis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
-    }
-    if (dragAxis === 'x') {
-      e.preventDefault();
-      const max = quickNavEl.scrollWidth - quickNavEl.clientWidth;
-      quickNavEl.scrollLeft = Math.max(0, Math.min(max, startScrollLeft - dx));
-    }
-  }, {passive:false});
-}
-
-const sectionLinks = [...document.querySelectorAll('.main-nav a[href^="#"], .quick-nav a[href^="#"]')];
+const sectionLinks = [...document.querySelectorAll('.main-nav a[href^="#"]')];
 const sections = sectionLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 if('IntersectionObserver' in window && sections.length){
   const navObserver = new IntersectionObserver((entries)=>{
     const active = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
     if(!active) return;
     sectionLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === `#${active.target.id}`));
-    const quickNav = document.querySelector('.quick-nav');
-    const activePill = document.querySelector(`.quick-nav a[href="#${active.target.id}"]`);
-    if(quickNav && activePill){
-      const navRect = quickNav.getBoundingClientRect();
-      const pillRect = activePill.getBoundingClientRect();
-      const alreadyVisible = pillRect.left >= navRect.left && pillRect.right <= navRect.right;
-      if(!alreadyVisible) activePill.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
-    }
   },{rootMargin:'-25% 0px -65% 0px',threshold:[0,.2,.5]});
   sections.forEach(s=>navObserver.observe(s));
 }
