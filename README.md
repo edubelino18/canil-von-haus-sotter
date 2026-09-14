@@ -12,8 +12,10 @@ Site estático (HTML/CSS/JS puro) publicado no GitHub Pages. Não depende de nen
   - `assets/sobre/`, `assets/criacao/`, `assets/adestramento/`, `assets/hospedagem/`, `assets/contato/` — fotos de cada seção.
 
 Dentro da pasta de cada seção, os nomes seguem sempre o mesmo padrão:
-- `capa-1.jpg`, `capa-2.jpg`, `capa-3.jpg`... — fotos da "capa" (hero) daquela seção. Quando há mais de uma, elas ficam alternando automaticamente a cada alguns segundos.
-- `detalhe-1.jpg`, `detalhe-2.jpg` — as duas fotos de detalhe no fim da seção (clicáveis para ampliar).
+- `capa-1.webp`, `capa-2.webp`, `capa-3.webp`... — fotos da "capa" (hero) daquela seção. Quando há mais de uma, elas ficam alternando automaticamente a cada alguns segundos.
+- `detalhe-1.webp`, `detalhe-2.webp` — as duas fotos de detalhe no fim da seção (clicáveis para ampliar).
+
+Todas as fotos usam o formato `.webp` (mais leve que `.jpg` na mesma qualidade visual, o que deixa o site mais rápido). Ao trocar uma foto, converta para `.webp` antes de subir — praticamente qualquer editor de imagem ou conversor online faz isso.
 
 ## Como atualizar um texto
 
@@ -24,26 +26,22 @@ Dentro da pasta de cada seção, os nomes seguem sempre o mesmo padrão:
 
 ## Como trocar uma foto existente
 
-1. Prepare a nova foto já no tamanho/formato desejado (idealmente `.jpg`).
-2. Vá até a pasta da seção certa (ex: `assets/adestramento/`), clique em **Add file → Upload files** e suba a nova foto com o **mesmo nome** da que será substituída (ex: `detalhe-1.jpg`) — o GitHub avisa que vai sobrescrever, confirme.
+1. Prepare a nova foto já convertida para `.webp` e no tamanho desejado.
+2. Vá até a pasta da seção certa (ex: `assets/adestramento/`), clique em **Add file → Upload files** e suba a nova foto com o **mesmo nome** da que será substituída (ex: `detalhe-1.webp`) — o GitHub avisa que vai sobrescrever, confirme.
 3. Pronto, não precisa mexer em mais nada.
 
 ## Como adicionar mais uma foto rotativa na capa de uma seção
 
-1. Suba a foto na pasta da seção com o próximo número disponível, por exemplo `assets/criacao/capa-2.jpg`.
+1. Suba a foto na pasta da seção com o próximo número disponível, por exemplo `assets/criacao/capa-2.webp`.
 2. No `index.html`, encontre a seção correspondente e localize o bloco `<div class="section-hero-image hero-slideshow">`. Adicione uma nova linha logo abaixo da `<img>` que já existe ali, seguindo o mesmo padrão, só trocando o número do arquivo:
    ```html
-   <img src="assets/criacao/capa-2.jpg" alt="..." width="960" height="1280" loading="lazy" decoding="async">
+   <img src="assets/criacao/capa-2.webp" alt="..." width="960" height="1280" loading="lazy" decoding="async">
    ```
 3. Pronto — com duas ou mais fotos nesse bloco, o site passa a alternar entre elas automaticamente (a cada 6 segundos, com transição suave).
 
 ## Como trocar o número de WhatsApp
 
-No arquivo `app.js`, altere a linha:
-
-```js
-const WHATSAPP_NUMBER = "5541999625634";
-```
+Os links de WhatsApp ficam prontos direto no `index.html`, no formato `https://wa.me/55419...?text=...`. Use "Localizar e substituir" (Ctrl+F) para achar `5541999625634` e trocar por `55DDNNNNNNNNN` (código do país + DDD + número, sem espaços ou símbolos) em todas as ocorrências — são 5 links no total (3 botões de seção, 1 no rodapé/contato e o ícone flutuante).
 
 ## Publicação (GitHub Pages)
 

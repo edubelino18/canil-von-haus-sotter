@@ -1,6 +1,5 @@
 "use strict";
 
-const WHATSAPP_NUMBER = "5541999625634";
 const menuBtn = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const header = document.querySelector('.site-header');
@@ -56,13 +55,6 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
 backToTop?.addEventListener('click', () => window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
-
-document.querySelectorAll('.wa-link').forEach(link=>{
-  const message = link.dataset.message || 'Olá! Vim pelo site do Canil Von Haus Sotter e gostaria de mais informações.';
-  link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-});
 
 const yearEl = document.querySelector('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
