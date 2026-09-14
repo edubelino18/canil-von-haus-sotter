@@ -96,6 +96,36 @@ if('IntersectionObserver' in window){
   revealItems.forEach(el=>el.classList.add('visible'));
 }
 
+// Scroll horizontal controlado manualmente na barra de pílulas (mobile): o iOS, em alguns
+// navegadores embutidos (WhatsApp, Instagram etc.), pode interpretar um arraste horizontal
+// que chega ao fim da lista como o gesto nativo de "voltar/avançar página" do próprio app,
+// revelando uma área em branco. Assumindo o controle do toque e chamando preventDefault()
+// assim que a intenção é horizontal, evitamos que esse gesto escape para fora da pílula.
+const quickNavEl = document.querySelector('.quick-nav');
+if (quickNavEl) {
+  let touchStartX = 0, touchStartY = 0, startScrollLeft = 0, dragAxis = null;
+  quickNavEl.addEventListener('touchstart', (e) => {
+    const t = e.touches[0];
+    touchStartX = t.clientX;
+    touchStartY = t.clientY;
+    startScrollLeft = quickNavEl.scrollLeft;
+    dragAxis = null;
+  }, {passive:true});
+  quickNavEl.addEventListener('touchmove', (e) => {
+    const t = e.touches[0];
+    const dx = t.clientX - touchStartX;
+    const dy = t.clientY - touchStartY;
+    if (dragAxis === null && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) {
+      dragAxis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    }
+    if (dragAxis === 'x') {
+      e.preventDefault();
+      const max = quickNavEl.scrollWidth - quickNavEl.clientWidth;
+      quickNavEl.scrollLeft = Math.max(0, Math.min(max, startScrollLeft - dx));
+    }
+  }, {passive:false});
+}
+
 const sectionLinks = [...document.querySelectorAll('.main-nav a[href^="#"], .quick-nav a[href^="#"]')];
 const sections = sectionLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 if('IntersectionObserver' in window && sections.length){
