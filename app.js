@@ -144,7 +144,7 @@ if('IntersectionObserver' in window && sections.length){
     currentIndex = (index + galleryImages.length) % galleryImages.length;
     const img = galleryImages[currentIndex];
     modalImg.src = img.currentSrc || img.src;
-    modalImg.alt = img.alt || 'Imagem ampliada do Canil Von Haus Sotter';
+    modalImg.alt = img.alt || 'Imagem ampliada do Canil Von Haus Sótter';
     caption.textContent = getCaption(img);
     counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
   };

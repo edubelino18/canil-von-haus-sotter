@@ -1,4 +1,4 @@
-# Canil Von Haus Sotter — site
+# Canil Von Haus Sótter — site
 
 Site estático (HTML/CSS/JS puro) publicado no GitHub Pages. Não depende de nenhum servidor, banco de dados ou build — para atualizar, basta editar o arquivo certo direto pelo GitHub (pelo navegador, sem precisar de nada instalado) e o site atualizado sobe sozinho em 1–2 minutos.
 
