@@ -83,7 +83,7 @@ body.menu-open .nav-backdrop{opacity:1;pointer-events:auto}
 
 /* Sobre: história + estrutura */
 .about-section{padding:0 0 10px}
-.story{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:start;padding-bottom:52px;border-bottom:1px solid var(--line)}
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:start}
 .story-copy p{color:#c3beb4;font-size:15.5px;margin:0 0 16px}
 .story-quote{margin:22px 0 0;padding:20px 22px;border-left:3px solid var(--gold);background:rgba(201,154,46,.06);border-radius:0 10px 10px 0;font-family:Georgia,serif;font-style:italic;color:#eadfc0;font-size:16px;line-height:1.5}
 .founder-tag{display:flex;align-items:center;gap:10px;margin-top:18px;color:var(--muted);font-size:13px}
@@ -143,7 +143,7 @@ body.menu-open .nav-backdrop{opacity:1;pointer-events:auto}
 .modality-card h3{font-family:Georgia,serif;font-weight:400;font-size:23px;margin:0 0 10px;color:#fff}
 .modality-card p{margin:0;color:#b9b4ab;font-size:14px}
 
-.specialties-block{padding:34px 0 0;border-top:1px solid var(--line);margin-top:34px}
+.specialties-block{margin-top:44px}
 .specialty-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0;padding:0;list-style:none}
 .specialty-list li{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:rgba(201,154,46,.03);color:#dcd7cc;font-size:14.5px}
 .specialty-list li:before{content:"✓";color:var(--gold);font-weight:800;flex:0 0 auto;margin-top:1px}
