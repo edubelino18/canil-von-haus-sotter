@@ -187,7 +187,7 @@ body.menu-open .nav-backdrop{opacity:1;pointer-events:auto}
 .floating-social svg{width:27px;height:27px}
 .floating-social .fs-whatsapp{background:#25d366}.floating-social .fs-whatsapp svg{fill:currentColor}
 .floating-social .fs-instagram{background:radial-gradient(circle at 30% 110%,#ffd600 0 10%,#ff7a00 25%,#ff0169 50%,#d300c5 75%,#7638fa 100%)}
-.floating-social .fs-instagram svg{fill:none;stroke:currentColor;stroke-width:2}
+.floating-social .fs-instagram svg{fill:currentColor}
 .back-to-top{position:fixed;left:14px;bottom:14px;z-index:999;width:46px;height:46px;border-radius:50%;background:rgba(20,22,18,.9);border:1px solid var(--line);color:var(--gold2);display:grid;place-items:center;font-size:18px;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease}
 .back-to-top.visible{opacity:1;pointer-events:auto;transform:none}
 @media(max-width:600px){.floating-social{right:10px;bottom:10px}.floating-social a{width:48px;height:48px}.back-to-top{left:10px;bottom:10px;width:42px;height:42px}}
