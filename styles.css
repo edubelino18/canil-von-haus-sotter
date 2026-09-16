@@ -158,8 +158,8 @@ body.menu-open .nav-backdrop{opacity:1;pointer-events:auto}
 .stay-cards .stay-card dd{margin:0;color:#c3beb4}
 .pill-list{display:flex;flex-wrap:wrap;gap:6px}
 .pill{display:inline-block;background:rgba(201,154,46,.1);color:var(--gold2);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12px}
-.service-area-label{margin:16px 0 8px;font-size:12.5px;font-weight:700;color:var(--gold2);text-transform:uppercase;letter-spacing:.04em}
-.service-area-list{margin:0;padding:0;list-style:none}
+.service-area-note{display:flex;align-items:flex-start;gap:10px;margin-top:14px;padding:0 2px;color:#c9c4ba;font-size:13.5px;line-height:1.6}
+.service-area-note .icon{flex:0 0 auto;color:var(--gold);margin-top:2px}
 
 .routine{padding:48px 0 46px}.photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,190px));gap:14px;justify-content:center}.photo-card{margin:0;position:relative;overflow:hidden;border-radius:10px;border:1px solid var(--line);background:#111;aspect-ratio:1/1;transition:transform .3s ease,border-color .3s ease}.photo-card:hover{transform:translateY(-3px);border-color:rgba(201,154,46,.55)}.photo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.84),transparent 54%);pointer-events:none}.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s ease;filter:saturate(.92);cursor:zoom-in}.photo-card:hover img{transform:scale(1.07);filter:saturate(1.08)}.photo-card figcaption{position:absolute;z-index:2;left:10px;right:10px;bottom:10px;font-family:Georgia,serif;text-align:center;font-size:13px;color:#f4ecdc;line-height:1.25}
 .photo-card:nth-child(1) img{object-position:50% 65%}
