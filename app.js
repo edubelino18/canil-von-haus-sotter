@@ -48,8 +48,8 @@ function onScroll(){
   backToTop?.classList.toggle('visible', scrollY > 600);
   if(scrollProgress){
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
-    scrollProgress.style.width = pct + '%';
+    const pct = docHeight > 0 ? scrollY / docHeight : 0;
+    scrollProgress.style.transform = `scaleX(${pct})`;
   }
 }
 window.addEventListener('scroll', onScroll, {passive:true});
