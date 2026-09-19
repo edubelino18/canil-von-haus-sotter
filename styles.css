@@ -174,14 +174,13 @@ body.menu-open .nav-backdrop{opacity:1;pointer-events:auto}
 /* Contato */
 .contact-section{padding:0 0 54px}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.contact-card{border:1px solid var(--line);border-radius:12px;padding:24px;background:linear-gradient(150deg,rgba(19,24,17,.96),rgba(11,13,11,.94));display:flex;gap:16px;align-items:flex-start;position:relative;overflow:hidden;transition:.3s ease}
+.contact-card{border:1px solid var(--line);border-radius:12px;padding:24px;background:linear-gradient(150deg,rgba(19,24,17,.96),rgba(11,13,11,.94));display:flex;gap:16px;align-items:center;position:relative;overflow:hidden;transition:.3s ease;text-decoration:none;cursor:pointer}
 .contact-card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 25%,rgba(201,154,46,.08) 50%,transparent 75%);transform:translateX(-130%);transition:.8s ease}
 .contact-card.reveal:hover{transform:translateY(-6px);border-color:rgba(201,154,46,.6);box-shadow:0 18px 40px rgba(0,0,0,.22)}.contact-card:hover:before{transform:translateX(130%)}
 .contact-card .c-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,154,46,.1);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);font-size:19px;flex:0 0 auto}
 .contact-card h3{margin:0 0 4px;font-family:Georgia,serif;font-weight:400;font-size:17px;color:#fff}
 .contact-card p{margin:0;color:var(--muted);font-size:14px}
-.contact-card a{color:#e3d3b0}
-.contact-card a.btn-gold{color:#171200}
+.contact-card .cc-link-text{color:#e3d3b0}
 .contact-cta{margin-top:30px;padding:28px 26px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(120deg,rgba(201,154,46,.1),rgba(0,0,0,.1));display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
 .contact-cta p{margin:0;max-width:460px;color:#e6e0d6;font-family:Georgia,serif;font-size:19px}
 
