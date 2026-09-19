@@ -43,15 +43,21 @@ if(menuBtn && nav){
 
 const scrollProgress = document.querySelector('#scrollProgress');
 const backToTop = document.querySelector('#backToTop');
+let docHeight = 0;
+function updateDocHeight(){
+  docHeight = document.documentElement.scrollHeight - window.innerHeight;
+}
 function onScroll(){
   header?.classList.toggle('scrolled', scrollY > 18);
   backToTop?.classList.toggle('visible', scrollY > 600);
   if(scrollProgress){
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const pct = docHeight > 0 ? scrollY / docHeight : 0;
     scrollProgress.style.transform = `scaleX(${pct})`;
   }
 }
+updateDocHeight();
+window.addEventListener('resize', updateDocHeight);
+window.addEventListener('load', updateDocHeight);
 window.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
 backToTop?.addEventListener('click', () => window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));

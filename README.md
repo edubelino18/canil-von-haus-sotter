@@ -17,6 +17,8 @@ Dentro da pasta de cada seção, os nomes seguem sempre o mesmo padrão:
 
 Todas as fotos usam o formato `.webp` (mais leve que `.jpg` na mesma qualidade visual, o que deixa o site mais rápido). Ao trocar uma foto, converta para `.webp` antes de subir — praticamente qualquer editor de imagem ou conversor online faz isso.
 
+Além do arquivo principal, a maioria das fotos tem uma segunda versão menor com `-800` no nome (ex: `capa-1-800.webp`, 800px de largura) — o navegador escolhe sozinho qual baixar (a pequena em celular, a grande em telas maiores). Isso é o que deixa o carregamento mais rápido no celular. **Se for trocar uma foto que tem essa versão `-800`, troque as duas** (mesmo conteúdo, só tamanhos diferentes) — senão quem acessa pelo celular continua vendo a foto antiga.
+
 ## Como atualizar um texto
 
 1. No GitHub, abra `index.html`.
@@ -28,7 +30,8 @@ Todas as fotos usam o formato `.webp` (mais leve que `.jpg` na mesma qualidade v
 
 1. Prepare a nova foto já convertida para `.webp` e no tamanho desejado.
 2. Vá até a pasta da seção certa (ex: `assets/adestramento/`), clique em **Add file → Upload files** e suba a nova foto com o **mesmo nome** da que será substituída (ex: `detalhe-1.webp`) — o GitHub avisa que vai sobrescrever, confirme.
-3. Pronto, não precisa mexer em mais nada.
+3. Se existir um arquivo `-800` com esse mesmo nome (ex: `detalhe-1-800.webp`), repita o upload também para ele, com uma versão redimensionada para 800px de largura.
+4. Mais fácil: peça pro Claude Code fazer a troca — ele já sabe gerar a versão `-800` certinha e evita esse tipo de esquecimento.
 
 ## Como adicionar mais uma foto rotativa na capa de uma seção
 
@@ -46,3 +49,5 @@ Os links de WhatsApp ficam prontos direto no `index.html`, no formato `https://w
 ## Publicação (GitHub Pages)
 
 Em **Settings → Pages** deste repositório, defina "Deploy from a branch", branch `main`, pasta `/ (root)`. Qualquer commit na branch `main` publica automaticamente a versão nova.
+
+O site fica no ar em **https://vsotter.com.br** (domínio próprio, registrado no Registro.br). O arquivo `CNAME` na raiz do repositório é o que diz ao GitHub Pages para responder por esse domínio — não apague nem renomeie esse arquivo. O DNS do domínio aponta para os servidores do GitHub Pages (registros configurados no painel do Registro.br).
