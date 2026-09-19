@@ -181,6 +181,7 @@ body.menu-open .nav-backdrop{opacity:1;pointer-events:auto}
 .contact-card h3{margin:0 0 4px;font-family:Georgia,serif;font-weight:400;font-size:17px;color:#fff}
 .contact-card p{margin:0;color:var(--muted);font-size:14px}
 .contact-card a{color:#e3d3b0}
+.contact-card a.btn-gold{color:#171200}
 .contact-cta{margin-top:30px;padding:28px 26px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(120deg,rgba(201,154,46,.1),rgba(0,0,0,.1));display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
 .contact-cta p{margin:0;max-width:460px;color:#e6e0d6;font-family:Georgia,serif;font-size:19px}
 
